@@ -53,6 +53,7 @@ WORKDIR /app
 COPY --from=base /app/upstream /app/upstream
 COPY --from=base /app/manager /app/manager
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # poorten
 EXPOSE 8090 8081 8080 8554
