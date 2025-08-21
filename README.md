@@ -11,7 +11,7 @@ Een drop-in uitbreiding op [`p10tyr/rtsp-to-onvif`](https://github.com/p10tyr/rt
 
 ## Snel starten
 ```bash
-docker buildx build --platform linux/amd64,linux/arm64 -t jouwrepo/rtsp-to-onvif-plus:latest .
+docker buildx build --platform linux/amd64,linux/arm64 -t versteegeict/rtsp-to-onvif-plus:latest .
 docker compose up -d
 ```
 Open daarna `http://<NAS-IP>:8090` en voeg camera’s toe in de GUI.
