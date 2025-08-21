@@ -1,0 +1,19 @@
+services:
+  rtsp-to-onvif-plus:
+    build: .
+    image: local/rtsp-to-onvif-plus:latest
+    container_name: rtsp-to-onvif-plus
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PORT=8090
+      - GUI_HOST=0.0.0.0
+      - ONVIF_CONFIG=/onvif.yaml
+      - AUTOPORT_BASE_SERVER=8081
+      - AUTOPORT_BASE_RTSP=8554
+      - AUTOPORT_BASE_SNAPSHOT=8080
+      - DEBUG=1
+    volumes:
+      - ./examples/config.yaml:/onvif.yaml:rw
+    restart: unless-stopped

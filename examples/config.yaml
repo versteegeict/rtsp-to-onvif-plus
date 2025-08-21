@@ -1,0 +1,18 @@
+onvif:
+  - name: ExampleCam
+    dev: eth0
+    target:
+      hostname: 192.168.1.10
+      ports: { rtsp: 554, snapshot: 80 }
+    highQuality:
+      rtsp: /Streaming/Channels/101/
+      snapshot: /ISAPI/Streaming/Channels/101/picture
+      width: 1920
+      height: 1080
+      framerate: 15
+      bitrate: 2048
+      quality: 4
+    ports:
+      server: 8081
+      rtsp: 8554
+      snapshot: 8080
